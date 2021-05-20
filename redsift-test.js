@@ -16,11 +16,11 @@ const task1 = [
   "pear",
 ];
 
-const result = task1.reduce((counts,fruit)=>({...counts, [fruit]: fruit in counts ? counts[fruit] + 1 : 1 }), {})
+const result = task1.reduce((counts, fruit) => ({ ...counts, [fruit]: fruit in counts ? counts[fruit] + 1 : 1 }), {})
 
 const items = ['Apple', 'Pear', 'Lemon', 'Orange', 'Pineapple', 'Tomato', 'Mango', 'Banana']
 
-const output = items.map(i=>`${i}: ${result[i.toLowerCase()] || 0 }`).join(',\r\n')
+const output = items.map(i => `${i}: ${result[i.toLowerCase()] || 0}`).join(',\r\n')
 
 console.log(output)
 
@@ -35,16 +35,16 @@ b) Write a solution that has better performance
 
 const getBlockPolicyState = (domains) => {
 
-	let oneDomain=false;
-  const allDomains =	Object.keys(domains).every(k=>{
-  	const blocked = domains[k].policy==='block'
-  	if(!oneDomain && blocked){
-    	oneDomain = true;
+  let oneDomain = false;
+  const allDomains = Object.keys(domains).every(k => {
+    const blocked = domains[k].policy === 'block'
+    if (!oneDomain && blocked) {
+      oneDomain = true;
     }
     return blocked;
   })
-  
-  return { oneDomain , allDomains };
+
+  return { oneDomain, allDomains };
 
 }
 /*
@@ -54,7 +54,7 @@ O(n) ie the same linear complexity growth characteristic but up to 3 x faster th
 
 */
 
-const domains = { 
+const domains = {
   "one.com": { policy: "block" },
   "two.com": { policy: "none" },
   "three.com": { policy: "none" },
@@ -69,29 +69,29 @@ console.log(getBlockPolicyState(domains))
 
 const getFirstRepeated = (arr) => {
 
-	let firstRepeated;
-  let seen={};
-  
+  let firstRepeated;
+  let seen = {};
+
   //using some to avoid checking all items
-  
-	arr.some(n => {
-  	if(seen[n]){
-    	firstRepeated=n;
-    	return true;
+
+  arr.some(n => {
+    if (seen[n]) {
+      firstRepeated = n;
+      return true;
     }
-    seen[n]=true;
+    seen[n] = true;
     return false;
   })
-  
+
   return firstRepeated;
-  
+
 }
 
 const task3 = [
-  [2,5,1,2,3,5,1,2,4], //Should return 2
-  [2,1,1,2,3,5,1,2,4], //Should return 1
-  [2,3,4,5], //Should return undefined
-  [2,5,5,2,3,5,1,2,4] //Should return 5
+  [2, 5, 1, 2, 3, 5, 1, 2, 4], //Should return 2
+  [2, 1, 1, 2, 3, 5, 1, 2, 4], //Should return 1
+  [2, 3, 4, 5], //Should return undefined
+  [2, 5, 5, 2, 3, 5, 1, 2, 4] //Should return 5
 ]
 
 task3.forEach(a => console.log(getFirstRepeated(a)))
