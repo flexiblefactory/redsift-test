@@ -15,12 +15,12 @@ Count how many Apples, Pears, Lemons, Oranges, Pineapples, Tomatoes, Mangos and 
 ```javascript
 Expected output:
 Apple: 2,
-Pear: 3
+Pear: 3,
 Lemon: 2,
 Orange: 1,
 Pineapple: 2,
 Tomato: 1,
-Mango: 1
+Mango: 1,
 Banana: 0
 ```
 
